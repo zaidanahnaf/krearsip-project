@@ -166,4 +166,4 @@ Proyek ini dilisensikan di bawah MIT License. Anda bebas menggunakan, memodifika
 ## ⭐ Credit
 Project by: Dhafa Zaidan Ahnaf
 
-For: Mata Kuliah Framework Pemrograman Web — Universitas Singaperbangsa Karawang (2025)
+Ditujukan untuk: Mata Kuliah Framework Pemrograman Web — Universitas Singaperbangsa Karawang (2025)

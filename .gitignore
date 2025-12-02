@@ -1,0 +1,106 @@
+~$EAProof_Tech_FAQ_Playbook.docx
+CREAProof_Playbook.pdf
+CREAProof_Tech_FAQ_Playbook.docx
+snap.ino
+
+#########################################
+# GLOBAL IGNORE (BERLAKU UNTUK SEMUA FOLDER)
+#########################################
+
+# Node / JavaScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Environment
+.env
+.env.*
+*.env.local
+*.env.development
+*.env.production
+*.env.test
+
+# OS Junk
+.DS_Store
+Thumbs.db
+
+#########################################
+# FRONTEND (React + Vite)
+#########################################
+
+# Vite output
+dist/
+.vite/
+
+# React & tooling
+*.tsbuildinfo
+
+#########################################
+# BACKEND (FastAPI + Python)
+#########################################
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python packaging
+*.egg-info/
+*.egg
+
+# Uvicorn / server logs
+uvicorn.log
+
+#########################################
+# BLOCKCHAIN (Hardhat)
+#########################################
+
+# Hardhat artifacts
+artifacts/
+cache/
+typechain/
+typechain-types/
+coverage/
+
+# Compiler output
+*.abi
+*.bin
+
+# Keys (IMPORTANT)
+*.secret
+secret.txt
+private-key.txt
+
+#########################################
+# EDITOR / IDE
+#########################################
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+#########################################
+# OPTIONAL (delete if unnecessary)
+#########################################
+
+# Postgres dumps
+*.sql
+
+# Build artifacts (general)
+build/
+dist/
+
+#########################################
+# END
+#########################################

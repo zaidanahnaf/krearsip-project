@@ -1,0 +1,163 @@
+{
+  "info": {
+    "_postman_id": "e7c08bfa-3d7d-4b77-9b83-55a218b61a98",
+    "name": "Krearsip API (Local Test)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "chatgpt-gpt5"
+  },
+  "item": [
+    {
+      "name": "Auth - Get Nonce",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"alamat_wallet\": \"0xYOUR_WALLET_ADDRESS_HERE\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/auth/nonce",
+          "protocol": "http",
+          "host": [
+            "127.0.0.1"
+          ],
+          "port": "8000",
+          "path": [
+            "auth",
+            "nonce"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Auth - Verify SIWE",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"alamat_wallet\": \"0xYOUR_WALLET_ADDRESS_HERE\",\n  \"message\": \"localhost wants you to sign in with your Ethereum account:\\n0xYOUR_WALLET_ADDRESS_HERE\\n\\nURI: http://localhost:3000\\nVersion: 1\\nChain ID: 11155111\\nNonce: YOUR_NONCE_HERE\\nIssued At: 2025-10-22T12:00:00Z\",\n  \"signature\": \"0xYOUR_SIGNATURE_HERE\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/auth/siwe/verify",
+          "protocol": "http",
+          "host": [
+            "127.0.0.1"
+          ],
+          "port": "8000",
+          "path": [
+            "auth",
+            "siwe",
+            "verify"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Works - Create Draft",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"judul\": \"Lukisan Matahari Senja\",\n  \"hash_berkas\": \"d5579c46dfcc7d0d9b8eac9e8e1a0a0ad9cdcc4f4bde2d8e5fbe6b832f1a9e4a\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/works",
+          "protocol": "http",
+          "host": [
+            "127.0.0.1"
+          ],
+          "port": "8000",
+          "path": [
+            "works"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Works - Update OnChain",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tx_hash\": \"0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n  \"alamat_kontrak\": \"0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\n  \"jaringan_ket\": \"sepolia\",\n  \"waktu_blok\": \"2025-10-22T12:34:56Z\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/works/{{karya_id}}/onchain",
+          "protocol": "http",
+          "host": [
+            "127.0.0.1"
+          ],
+          "port": "8000",
+          "path": [
+            "works",
+            "{{karya_id}}",
+            "onchain"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://127.0.0.1:8000/healthz",
+          "protocol": "http",
+          "host": [
+            "127.0.0.1"
+          ],
+          "port": "8000",
+          "path": [
+            "healthz"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "access_token",
+      "value": ""
+    },
+    {
+      "key": "karya_id",
+      "value": ""
+    }
+  ]
+}
